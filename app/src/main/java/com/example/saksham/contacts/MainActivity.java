@@ -51,12 +51,16 @@ public class MainActivity extends AppCompatActivity {
             user.setPhone(phone.getText().toString());
         }
     public void button (View view){
-                        getValues();
+                        //getValues();
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                    ref.child("users01").setValue(user);
+                getValues();
+                    //ref.child("users01").setValue(user);
+                    ref.child("user").setValue(user);
+
                 Toast.makeText(MainActivity.this,"ADDED TO DATABASE",Toast.LENGTH_LONG).show();
+                    //onStop();
             }
 
             @Override
